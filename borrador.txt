@@ -1,0 +1,20 @@
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Configurar middlewares
+app.use(cors());
+app.use(bodyParser.json());
+
+// Configurar rutas
+app.get('/', (req, res) => {
+  res.send('¡API en funcionamiento!');
+});
+
+// Iniciar el servidor
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor escuchando en el puerto ${port}`);
+});
